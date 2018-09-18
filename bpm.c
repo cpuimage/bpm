@@ -45,6 +45,7 @@ float *wavRead_f32(char *filename, uint32_t *sampleRate, uint64_t *totalSampleCo
             *bufferSave++ = ((buffer[i] + buffer[i + 1]) * 0.5f);
         }
         *totalSampleCount = *totalSampleCount >> 1;
+        *channels = 1;
     } else if (*channels != 1) {
         drwav_free(buffer);
         buffer = NULL;
